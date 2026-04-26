@@ -291,8 +291,8 @@ p { color: var(--slate-600); font-size: 1rem; line-height: 1.625; margin-bottom:
    Footer
    ========================================================================= */
 .site-footer {
-    background-color: var(--footer-bg);
-    color: white;
+    background-color: #f5f5f5;
+    color: var(--slate-800);
     padding: 64px 48px 24px 48px;
 }
 .footer-grid {
@@ -301,33 +301,33 @@ p { color: var(--slate-600); font-size: 1rem; line-height: 1.625; margin-bottom:
     gap: 48px;
     margin-bottom: 48px;
 }
-.footer-brand h3 { color: white; margin-bottom: 8px; font-size: 1.5rem; }
-.footer-brand p { color: var(--slate-400); margin-bottom: 24px; }
+.footer-brand h3 { color: var(--slate-900); margin-bottom: 8px; font-size: 1.5rem; }
+.footer-brand p { color: var(--slate-600); margin-bottom: 24px; }
 .social-icons { display: flex; gap: 16px; }
 .social-icons a {
     width: 40px; height: 40px;
-    background: rgba(255,255,255,0.1);
+    background: var(--slate-200);
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    color: white;
-    transition: background 0.2s ease;
+    color: var(--slate-700);
+    transition: background 0.2s ease, color 0.2s ease;
 }
-.social-icons a:hover { background: var(--primary); }
+.social-icons a:hover { background: var(--primary); color: white; }
 
-.footer-links h4, .footer-contact h4 { color: white; margin-bottom: 24px; font-size: 1.125rem; }
+.footer-links h4, .footer-contact h4 { color: var(--slate-900); margin-bottom: 24px; font-size: 1.125rem; }
 .footer-links ul { list-style: none; }
 .footer-links li { margin-bottom: 12px; }
-.footer-links a { color: var(--slate-300); text-decoration: none; transition: color 0.15s ease; }
+.footer-links a { color: var(--slate-600); text-decoration: none; transition: color 0.15s ease; }
 .footer-links a:hover { color: var(--primary); }
-.footer-contact p { display: flex; align-items: center; gap: 12px; color: var(--slate-300); margin-bottom: 12px; }
+.footer-contact p { display: flex; align-items: center; gap: 12px; color: var(--slate-600); margin-bottom: 12px; }
 .small-icon { width: 18px; height: 18px; color: var(--primary); }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid var(--slate-200);
     padding-top: 24px;
     text-align: center;
 }
-.footer-bottom p { margin: 0; color: var(--slate-400); font-size: 0.875rem; }
+.footer-bottom p { margin: 0; color: var(--slate-500); font-size: 0.875rem; }
 
 /* =========================================================================
    Sporty UI Components (League Page)
