@@ -330,6 +330,164 @@ p { color: var(--slate-600); font-size: 1rem; line-height: 1.625; margin-bottom:
 .footer-bottom p { margin: 0; color: var(--slate-400); font-size: 0.875rem; }
 
 /* =========================================================================
+   Sporty UI Components (League Page)
+   ========================================================================= */
+
+/* Announcement */
+.sporty-announcement-container {
+    background-color: var(--soft-green);
+    padding: 32px;
+    border-radius: 16px;
+}
+.sporty-announcement-card {
+    background-color: var(--bg);
+    padding: 32px;
+    border-radius: 12px;
+    border-left: 6px solid var(--primary);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+.sporty-announcement-card h2 { margin-bottom: 16px; font-size: 1.5rem; }
+.sporty-announcement-card p { margin-bottom: 12px; font-size: 1.125rem;}
+
+.pt-0 { padding-top: 0 !important; }
+
+/* Teams Grid */
+.teams-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+.team-rectangle-card {
+    background: var(--bg);
+    border-radius: 12px;
+    border-right: 6px solid var(--primary);
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    border-top: 1px solid var(--slate-100);
+    border-bottom: 1px solid var(--slate-100);
+    border-left: 1px solid var(--slate-100);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.team-rectangle-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 12px -3px rgba(0,0,0,0.08);
+}
+.team-logo-placeholder {
+    width: 56px;
+    height: 56px;
+    background: var(--soft-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+.team-logo-placeholder i { width: 28px; height: 28px; stroke-width: 1.5; }
+.team-info h3 { font-size: 1.25rem; margin-bottom: 4px; }
+.team-info p { margin: 0; font-size: 0.875rem; color: var(--slate-500); font-weight: 500; }
+
+/* Table */
+.sporty-table-container {
+    border: none;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+.sporty-table th {
+    background-color: var(--soft-green);
+    color: var(--slate-900);
+    border-bottom: 2px solid var(--primary);
+}
+.sporty-table td {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--slate-100);
+    border-top: none;
+    font-weight: 500;
+}
+.sporty-table tbody tr:last-child td {
+    border-bottom: none;
+}
+.sporty-table tbody tr {
+    transition: background-color 0.2s;
+}
+.sporty-table tbody tr:hover {
+    background-color: var(--slate-50);
+}
+
+/* Empty State */
+.empty-state-card {
+    background-color: var(--soft-green);
+    border-radius: 16px;
+    padding: 64px 32px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.empty-state-icon {
+    width: 64px;
+    height: 64px;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+.empty-state-icon i { width: 100%; height: 100%; stroke-width: 1.5; }
+.empty-state-card h2 { font-size: 1.75rem; margin-bottom: 12px; }
+.empty-state-card p { font-size: 1.125rem; margin: 0; }
+
+/* Updates List */
+.sporty-updates-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+}
+.sporty-updates-list::before {
+    content: '';
+    position: absolute;
+    right: 23px; /* RTL, align with the center of the number circle */
+    top: 24px;
+    bottom: 24px;
+    width: 2px;
+    background-color: var(--soft-green);
+    z-index: 0;
+}
+.update-item {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+}
+.update-number {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--bg);
+    border: 2px solid var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--primary-dark);
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+.update-content {
+    background-color: var(--bg);
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    border: 1px solid var(--slate-100);
+    flex: 1;
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: var(--slate-800);
+}
+
+/* =========================================================================
    Legacy / Shared elements (Fallback styles for League/Contact)
    ========================================================================= */
 .table-container { overflow-x: auto; background: var(--bg); border: 1px solid var(--slate-200); border-radius: 16px; }

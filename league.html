@@ -25,77 +25,147 @@
     </header>
 
     <main class="content-wrapper max-width">
-        <section class="hero league rounded-bottom">
-            <h1>دوري الصداقة EDITION 6</h1>
-            <p>الحماس، التحدي، والمتعة المستمرة في أحدث نسخ بطولتنا المحلية السنوية!</p>
+        <section class="hero-bg" style="min-height: 300px; background-image: url('https://images.unsplash.com/photo-1518605368461-1e1e38ce8048?q=80&w=2000&auto=format&fit=crop');">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>دوري الصداقة EDITION 6</h1>
+                <p>الحماس، التحدي، والمتعة المستمرة في أحدث نسخ بطولتنا المحلية السنوية!</p>
+            </div>
         </section>
 
-        <section class="section">
-            <h2 class="section-title">الفرق المشاركة</h2>
-            <div class="grid">
-                <div class="card team-card">
-                    <h3 class="card-title">فريق الأبطال</h3>
-                    <p>ممثل للحي الشمالي.</p>
-                </div>
-                <div class="card team-card">
-                    <h3 class="card-title">فريق التحدي</h3>
-                    <p>تشكيلة شابة وطموحة.</p>
-                </div>
-                <div class="card team-card">
-                    <h3 class="card-title">فريق النجوم</h3>
-                    <p>حاملو لقب النسخة الماضية.</p>
+        <!-- 1. إعلان رسمي -->
+        <section class="section max-width">
+            <div class="sporty-announcement-container">
+                <div class="sporty-announcement-card">
+                    <span class="badge">إعلان رسمي</span>
+                    <h2>دوري الصداقة (النسخة السادسة)</h2>
+                    <p>للمرة السادسة تنظم جمعية العيون وسى هذه التظاهرة الرياضية لكرة القدم المصغرة، والتي ستقام في الملعب الشرفي العيون وسى.</p>
+                    <p>وتدعو الجمعية جميع الفرق لحضور قرعة البطولة يوم الأحد 26 أبريل 2026 بمقر الجمعية.</p>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <h2 class="section-title">جدول الترتيب (Standings)</h2>
-            <div class="table-container">
-                <table>
+        <!-- 2. الفرق المشاركة -->
+        <section class="section max-width pt-0">
+            <h2 class="section-title">الفرق المشاركة</h2>
+            <div class="teams-grid">
+                <div class="team-rectangle-card">
+                    <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+                    <div class="team-info">
+                        <h3>شباب العيون وسى</h3>
+                        <p>المسؤول: اسماعيل العسيري</p>
+                    </div>
+                </div>
+                <div class="team-rectangle-card">
+                    <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+                    <div class="team-info">
+                        <h3>شباب وارزميمن</h3>
+                        <p>المسؤول: عبد السلام ايت بكريم</p>
+                    </div>
+                </div>
+                <div class="team-rectangle-card">
+                    <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+                    <div class="team-info">
+                        <h3>تامونت اسمن</h3>
+                        <p>المسؤول: العربي النية</p>
+                    </div>
+                </div>
+                <div class="team-rectangle-card">
+                    <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+                    <div class="team-info">
+                        <h3>نجم ميرا</h3>
+                        <p>المسؤول: محمد أبو الحرر</p>
+                    </div>
+                </div>
+                <div class="team-rectangle-card">
+                    <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+                    <div class="team-info">
+                        <h3>شباب انونعدو</h3>
+                        <p>المسؤول: هشام حمداني</p>
+                    </div>
+                </div>
+                <div class="team-rectangle-card">
+                    <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+                    <div class="team-info">
+                        <h3>تيدوكلا اكال ملولن</h3>
+                        <p>المسؤول: محمد اساوري</p>
+                    </div>
+                </div>
+                <div class="team-rectangle-card">
+                    <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+                    <div class="team-info">
+                        <h3>ج.ر. ازغار وجان</h3>
+                        <p>المسؤول: عبد الله الرفيق</p>
+                    </div>
+                </div>
+                <div class="team-rectangle-card">
+                    <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+                    <div class="team-info">
+                        <h3>اتحاد اوشان وجان</h3>
+                        <p>المسؤول: </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. جدول الترتيب -->
+        <section class="section max-width pt-0">
+            <h2 class="section-title">جدول الترتيب</h2>
+            <div class="table-container sporty-table-container">
+                <table class="sporty-table">
                     <thead>
                         <tr>
-                            <th>المركز</th>
+                            <th>الترتيب</th>
                             <th>الفريق</th>
-                            <th>لعب</th>
-                            <th>فاز</th>
-                            <th>تعادل</th>
-                            <th>خسر</th>
                             <th>النقاط</th>
+                            <th>لعب</th>
+                            <th>فوز</th>
+                            <th>تعادل</th>
+                            <th>خسارة</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Standings remain empty to be filled -->
-                        <tr>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
+                        <tr><td>1</td><td>-</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td>2</td><td>-</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td>3</td><td>-</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td>4</td><td>-</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td>5</td><td>-</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td>6</td><td>-</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td>7</td><td>-</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td>8</td><td>-</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <section class="section">
-            <h2 class="section-title">المباريات القادمة</h2>
-            <div class="grid">
-                <div class="card match-card">
-                    <div class="match-info">
-                        <span>جاري التحديد</span> - <span>جاري التحديد</span>
-                    </div>
-                    <p class="match-date">لم يحدد الموعد بعد</p>
+        <!-- 4. المباريات -->
+        <section class="section max-width pt-0">
+            <div class="empty-state-card">
+                <div class="empty-state-icon"><i data-lucide="calendar"></i></div>
+                <h2>المباريات</h2>
+                <p>سيتم الإعلان عن المباريات قريباً</p>
+            </div>
+        </section>
+
+        <!-- 5. التحديثات -->
+        <section class="section max-width pt-0">
+            <h2 class="section-title">التحديثات</h2>
+            <div class="sporty-updates-list">
+                <div class="update-item">
+                    <div class="update-number">1</div>
+                    <div class="update-content">تسجيل الفرق المشاركة</div>
+                </div>
+                <div class="update-item">
+                    <div class="update-number">2</div>
+                    <div class="update-content">إجراء قرعة البطولة</div>
+                </div>
+                <div class="update-item">
+                    <div class="update-number">3</div>
+                    <div class="update-content">قوانين البطولة</div>
+                </div>
+                <div class="update-item">
+                    <div class="update-number">4</div>
+                    <div class="update-content">تحديد مواعيد المباريات</div>
                 </div>
             </div>
         </section>
