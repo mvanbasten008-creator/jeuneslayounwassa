@@ -24,4 +24,30 @@ document.addEventListener("DOMContentLoaded", () => {
             mainMenu.classList.toggle('active');
         });
     }
+
+    // 3. Rules Modal Logic
+    const openRulesBtn = document.getElementById('openRulesBtn');
+    const rulesModal = document.getElementById('rulesModal');
+    const closeRulesBtn = document.getElementById('closeRulesBtn');
+
+    if (openRulesBtn && rulesModal && closeRulesBtn) {
+        // Find overlay
+        const rulesOverlay = rulesModal.querySelector('.rules-modal-overlay');
+
+        const openModal = () => {
+            rulesModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        };
+
+        const closeModal = () => {
+            rulesModal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        };
+
+        openRulesBtn.addEventListener('click', openModal);
+        closeRulesBtn.addEventListener('click', closeModal);
+        if(rulesOverlay) {
+            rulesOverlay.addEventListener('click', closeModal);
+        }
+    }
 });
