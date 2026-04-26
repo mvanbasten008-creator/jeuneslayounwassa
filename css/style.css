@@ -415,6 +415,17 @@ p { color: var(--slate-600); font-size: 1rem; line-height: 1.625; margin-bottom:
 .sporty-table tbody tr:hover {
     background-color: var(--slate-50);
 }
+.rank-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: var(--soft-green);
+    color: var(--primary);
+    font-weight: 700;
+    border-radius: 50%;
+}
 
 /* Empty State */
 .empty-state-card {
