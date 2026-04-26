@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Community Association</title>
+    <title>Contact - جمعية العيون وسى</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- Using Lucide Icons over CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
     <header class="header">
-        <div class="nav-wrapper max-width">
-            <a href="index.html" class="logo">CommUnity</a>
-            <nav class="main-menu">
+        <div class="nav-wrapper max-width" dir="ltr">
+            <a href="index.html" class="logo">العيون وسى</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+                <i data-lucide="menu"></i>
+            </button>
+            <nav class="main-menu" id="mainMenu" dir="ltr">
                 <a href="index.html">Home</a>
                 <a href="league.html">League</a>
                 <a href="about.html">About</a>
@@ -19,7 +24,7 @@
         </div>
     </header>
 
-    <main dir="rtl" class="content-wrapper max-width">
+    <main class="content-wrapper max-width">
         <section class="section pt-100">
             <h2 class="section-title mt-50">تواصل معنا</h2>
             <div class="grid contact-layout">
@@ -45,10 +50,43 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <p>&copy; 2026 CommUnity Association. All rights reserved.</p>
+    <footer class="site-footer">
+        <div class="footer-grid max-width">
+            <div class="footer-brand">
+                <h3>جمعية العيون وسى</h3>
+                <p>للشباب و الرياضة و الثقافة</p>
+                <div class="social-icons" dir="ltr">
+                    <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                    <a href="#" aria-label="Youtube"><i data-lucide="youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links" dir="ltr">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="league.html">League</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact" dir="rtl">
+                <h4>تواصل معنا</h4>
+                <p><i data-lucide="map-pin" class="small-icon"></i> دوار العيون وسى، جماعة وجان، تزنيت</p>
+                <p><i data-lucide="phone" class="small-icon"></i> +212 600 000 000</p>
+                <p><i data-lucide="mail" class="small-icon"></i> contact@laayoune-wsa.org</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 جمعية العيون وسى للشباب و الرياضة و الثقافة</p>
+        </div>
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
 </body>
 </html>
