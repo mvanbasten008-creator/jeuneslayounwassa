@@ -814,6 +814,14 @@ p { color: var(--slate-600); font-size: 1rem; line-height: 1.625; margin-bottom:
     overflow-y: auto;
 }
 
+.modal-cadre {
+    border: 1px solid var(--glow-border);
+    border-radius: 12px;
+    padding: 24px;
+    background: var(--bg);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02), 0 0 12px var(--glow-color);
+}
+
 .rules-list {
     padding-right: 24px;
     margin: 0;

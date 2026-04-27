@@ -51,6 +51,31 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // 3.5. Draw Modal Logic
+    const openDrawBtn = document.getElementById('openDrawBtn');
+    const drawModal = document.getElementById('drawModal');
+    const closeDrawBtn = document.getElementById('closeDrawBtn');
+
+    if (openDrawBtn && drawModal && closeDrawBtn) {
+        const drawOverlay = drawModal.querySelector('.rules-modal-overlay');
+
+        const openDraw = () => {
+            drawModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeDraw = () => {
+            drawModal.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        openDrawBtn.addEventListener('click', openDraw);
+        closeDrawBtn.addEventListener('click', closeDraw);
+        if(drawOverlay) {
+            drawOverlay.addEventListener('click', closeDraw);
+        }
+    }
+
     // 4. Gallery Logic
     const galleryScroll = document.getElementById('galleryScroll');
     const btnPrev = document.getElementById('galleryBtnPrev');
