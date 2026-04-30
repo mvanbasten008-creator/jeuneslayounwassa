@@ -135,5 +135,188 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // 6. Matches Carousel Logic
+    const matchesCarousel = document.getElementById('matchesCarousel');
+    const matchBtnPrev = document.getElementById('matchBtnPrev');
+    const matchBtnNext = document.getElementById('matchBtnNext');
+    const matchDots = document.querySelectorAll('.match-dot');
+    
+    if (matchesCarousel && matchBtnPrev && matchBtnNext) {
+        
+        let originalCards = Array.from(matchesCarousel.querySelectorAll('.match-card'));
+        const numOriginals = originalCards.length;
+
+        // Add index data to original dots to map them
+        matchDots.forEach((dot, index) => {
+            dot.dataset.index = index;
+            // Also add click events to dots for navigation
+            dot.addEventListener('click', () => {
+                const currentCards = Array.from(matchesCarousel.querySelectorAll('.match-card'));
+                // Find nearest card with this index
+                const containerCenter = matchesCarousel.scrollLeft + (matchesCarousel.offsetWidth / 2);
+                
+                let targetCard = null;
+                let minDistance = Infinity;
+
+                currentCards.forEach(card => {
+                    if (parseInt(card.dataset.index) === index) {
+                        const cardCenter = card.offsetLeft + (card.offsetWidth / 2);
+                        const dist = Math.abs(cardCenter - containerCenter);
+                        if (dist < minDistance) {
+                            minDistance = dist;
+                            targetCard = card;
+                        }
+                    }
+                });
+
+                if (targetCard) {
+                    const cardCenter = targetCard.offsetLeft + (targetCard.offsetWidth / 2);
+                    const targetScroll = cardCenter - (matchesCarousel.offsetWidth / 2);
+                    matchesCarousel.scrollTo({ left: targetScroll, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // 1. Clone cards to create an infinite loop effect
+        // We will prepend 2 sets and append 2 sets.
+        originalCards.forEach((card, index) => {
+            card.dataset.index = index;
+        });
+
+        const prependGroup = [];
+        const appendGroup = [];
+
+        // Create 2 sets of clones for prepend
+        for (let i = 0; i < 2; i++) {
+            originalCards.forEach(card => {
+                const clone = card.cloneNode(true);
+                clone.classList.remove('active');
+                prependGroup.push(clone);
+            });
+        }
+        
+        // Create 2 sets of clones for append
+        for (let i = 0; i < 2; i++) {
+            originalCards.forEach(card => {
+                const clone = card.cloneNode(true);
+                clone.classList.remove('active');
+                appendGroup.push(clone);
+            });
+        }
+
+        // Add them to DOM
+        // To keep original cards in middle, prepend and append
+        prependGroup.reverse().forEach(clone => matchesCarousel.prepend(clone));
+        appendGroup.forEach(clone => matchesCarousel.append(clone));
+
+        // Get all cards after DOM update
+        let allCards = Array.from(matchesCarousel.querySelectorAll('.match-card'));
+        const totalCards = allCards.length;
+        
+        // Middle block start index
+        const middleStartIndex = numOriginals * 2;
+
+        // 2. Set initial scroll position to the original elements (middle)
+        function centerToMiddle() {
+            matchesCarousel.style.scrollBehavior = 'auto'; // Disable smooth scroll
+            const centerCard = allCards[middleStartIndex];
+            centerCard.scrollIntoView({ behavior: 'auto', inline: 'center', block: 'nearest' });
+            matchesCarousel.style.scrollBehavior = 'smooth';
+        }
+
+        // Wait for fonts/layout then center
+        setTimeout(centerToMiddle, 100);
+
+        matchBtnPrev.addEventListener('click', () => {
+             const cardWidth = originalCards[0].offsetWidth + parseInt(window.getComputedStyle(matchesCarousel).gap || 24);
+             matchesCarousel.scrollBy({ left: cardWidth, behavior: 'smooth' }); 
+        });
+
+        matchBtnNext.addEventListener('click', () => {
+             const cardWidth = originalCards[0].offsetWidth + parseInt(window.getComputedStyle(matchesCarousel).gap || 24);
+             matchesCarousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+        });
+
+        let isScrolling;
+        let isHandlingJump = false;
+
+        function updateMatchesDots() {
+            if(!matchesCarousel || allCards.length === 0) return;
+            
+            // RTL safe logic for center using getBoundingClientRect
+            const carouselRect = matchesCarousel.getBoundingClientRect();
+            const containerCenter = carouselRect.left + (carouselRect.width / 2);
+            
+            let closestIndex = 0;
+            let minDistance = Infinity;
+
+            allCards.forEach((card, index) => {
+                const rect = card.getBoundingClientRect();
+                const cardCenter = rect.left + (rect.width / 2);
+                const distance = Math.abs(cardCenter - containerCenter);
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestIndex = index;
+                }
+            });
+
+            // Update active styles
+            allCards.forEach((card, index) => {
+                if (index === closestIndex) {
+                    card.classList.add('active');
+                } else {
+                    card.classList.remove('active');
+                }
+            });
+
+            const activeDataIndex = parseInt(allCards[closestIndex].dataset.index);
+            matchDots.forEach((dot, index) => {
+                if (index === activeDataIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+
+            // Seamless jump logic
+            // If we scrolled into the first group or last group, jump back to middle group
+            if (!isHandlingJump) {
+                if (closestIndex <= numOriginals) {
+                    isHandlingJump = true;
+                    // We are at the very beginning list, jump forward by 2 groups (to middle)
+                    const equivalentIndex = closestIndex + (numOriginals * 2);
+                    const targetCard = allCards[equivalentIndex];
+                    
+                    matchesCarousel.style.scrollBehavior = 'auto'; // instantly jump
+                    targetCard.scrollIntoView({ behavior: 'auto', inline: 'center', block: 'nearest' });
+                    
+                    matchesCarousel.style.scrollBehavior = 'smooth';
+                    setTimeout(() => isHandlingJump = false, 50);
+                } else if (closestIndex >= totalCards - numOriginals - 1) {
+                    isHandlingJump = true;
+                    // We are at the end list, jump backward by 2 groups
+                    const equivalentIndex = closestIndex - (numOriginals * 2);
+                    const targetCard = allCards[equivalentIndex];
+                    
+                    matchesCarousel.style.scrollBehavior = 'auto'; // instantly jump
+                    targetCard.scrollIntoView({ behavior: 'auto', inline: 'center', block: 'nearest' });
+                    
+                    matchesCarousel.style.scrollBehavior = 'smooth';
+                    setTimeout(() => isHandlingJump = false, 50);
+                }
+            }
+        }
+
+        matchesCarousel.addEventListener('scroll', () => {
+            window.clearTimeout(isScrolling);
+            
+            // Fast visual update
+            updateMatchesDots();
+            
+            isScrolling = setTimeout(function() {
+                updateMatchesDots();
+            }, 50);
+        });
+    }
 });
 
