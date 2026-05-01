@@ -1,0 +1,167 @@
+276-            </div>
+277-
+278-            <div class="all-matches-list">
+279-                <!-- الجولة الأولى -->
+280-                <div class="match-round-title">الجولة الأولى – الأحد 10 ماي 2026</div>
+281:                <div class="all-match-row">
+282-                    <div class="am-team">
+283-                        <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+284-                        <span class="am-team-name">تامونت اسمن</span>
+285-                    </div>
+286-                    <div class="am-center">
+--
+290-                    <div class="am-team am-team-right">
+291-                        <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+292-                        <span class="am-team-name">اشبال انونعدو</span>
+293-                    </div>
+294-                </div>
+295:                <div class="all-match-row">
+296-                    <div class="am-team">
+297-                        <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+298-                        <span class="am-team-name">شباب وارزميمن</span>
+299-                    </div>
+300-                    <div class="am-center">
+--
+304-                    <div class="am-team am-team-right">
+305-                        <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+306-                        <span class="am-team-name">ج.ر. ازغار وجان</span>
+307-                    </div>
+308-                </div>
+309:                <div class="all-match-row">
+310-                    <div class="am-team">
+311-                        <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+312-                        <span class="am-team-name">نجم ميرا</span>
+313-                    </div>
+314-                    <div class="am-center">
+--
+318-                    <div class="am-team am-team-right">
+319-                        <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+320-                        <span class="am-team-name">تيدوكلا اكال ملولن</span>
+321-                    </div>
+322-                </div>
+323:                <div class="all-match-row">
+324-                    <div class="am-team">
+325-                        <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+326-                        <span class="am-team-name">اتحاد اوشان وجان</span>
+327-                    </div>
+328-                    <div class="am-center">
+--
+335-                    </div>
+336-                </div>
+337-
+338-                <!-- الجولة الثانية -->
+339-                <div class="match-round-title">الجولة الثانية – الأحد 17 ماي 2026</div>
+340:                <div class="all-match-row">
+341-                    <div class="am-team">
+342-                        <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+343-                        <span class="am-team-name">نجم ميرا</span>
+344-                    </div>
+345-                    <div class="am-center">
+--
+349-                    <div class="am-team am-team-right">
+350-                        <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+351-                        <span class="am-team-name">شباب العيون وسى</span>
+352-                    </div>
+353-                </div>
+354:                <div class="all-match-row">
+355-                    <div class="am-team">
+356-                        <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+357-                        <span class="am-team-name">اتحاد اوشان وجان</span>
+358-                    </div>
+359-                    <div class="am-center">
+--
+363-                    <div class="am-team am-team-right">
+364-                        <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+365-                        <span class="am-team-name">تيدوكلا اكال ملولن</span>
+366-                    </div>
+367-                </div>
+368:                <div class="all-match-row">
+369-                    <div class="am-team">
+370-                        <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+371-                        <span class="am-team-name">ج.ر. ازغار وجان</span>
+372-                    </div>
+373-                    <div class="am-center">
+--
+377-                    <div class="am-team am-team-right">
+378-                        <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+379-                        <span class="am-team-name">اشبال انونعدو</span>
+380-                    </div>
+381-                </div>
+382:                <div class="all-match-row">
+383-                    <div class="am-team">
+384-                        <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+385-                        <span class="am-team-name">شباب وارزميمن</span>
+386-                    </div>
+387-                    <div class="am-center">
+--
+394-                    </div>
+395-                </div>
+396-
+397-                <!-- الجولة الثالثة -->
+398-                <div class="match-round-title">الجولة الثالثة – الأحد 24 ماي 2026</div>
+399:                <div class="all-match-row">
+400-                    <div class="am-team">
+401-                        <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+402-                        <span class="am-team-name">شباب العيون وسى</span>
+403-                    </div>
+404-                    <div class="am-center">
+--
+408-                    <div class="am-team am-team-right">
+409-                        <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+410-                        <span class="am-team-name">تيدوكلا اكال ملولن</span>
+411-                    </div>
+412-                </div>
+413:                <div class="all-match-row">
+414-                    <div class="am-team">
+415-                        <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+416-                        <span class="am-team-name">شباب وارزميمن</span>
+417-                    </div>
+418-                    <div class="am-center">
+--
+422-                    <div class="am-team am-team-right">
+423-                        <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+424-                        <span class="am-team-name">اشبال انونعدو</span>
+425-                    </div>
+426-                </div>
+427:                <div class="all-match-row">
+428-                    <div class="am-team">
+429-                        <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+430-                        <span class="am-team-name">نجم ميرا</span>
+431-                    </div>
+432-                    <div class="am-center">
+--
+436-                    <div class="am-team am-team-right">
+437-                        <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+438-                        <span class="am-team-name">اتحاد اوشان وجان</span>
+439-                    </div>
+440-                </div>
+441:                <div class="all-match-row">
+442-                    <div class="am-team">
+443-                        <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+444-                        <span class="am-team-name">ج.ر. ازغار وجان</span>
+445-                    </div>
+446-                    <div class="am-center">
+--
+453-                    </div>
+454-                </div>
+455-
+456-                <!-- الجولة الأخيرة -->
+457-                <div class="match-round-title">الجولة الأخيرة</div>
+458:                <div class="all-match-row">
+459-                    <div class="am-team">
+460-                        <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+461-                        <span class="am-team-name">الرتبة الثانية المجموعة A</span>
+462-                    </div>
+463-                    <div class="am-center">
+--
+467-                    <div class="am-team am-team-right">
+468-                        <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+469-                        <span class="am-team-name">الرتبة الثانية المجموعة B</span>
+470-                    </div>
+471-                </div>
+472:                <div class="all-match-row">
+473-                    <div class="am-team">
+474-                        <div class="team-logo-placeholder"><i data-lucide="shield"></i></div>
+475-                        <span class="am-team-name">الرتبة الأولى المجموعة A</span>
+476-                    </div>
+477-                    <div class="am-center">
