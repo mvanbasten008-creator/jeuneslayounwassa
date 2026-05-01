@@ -1451,16 +1451,3 @@ tr:hover { background: var(--slate-50); }
     .footer-grid { grid-template-columns: 1fr; }
     .site-footer { padding: 48px 24px 24px 24px; }
 }
-
-.league-hero {
-  background-image: url('/Images2/Heroleague.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-}
-
-.league-hero > * {
-  position: relative;
-  z-index: 2;
-}
