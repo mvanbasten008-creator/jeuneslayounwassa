@@ -564,21 +564,14 @@ p {
   gap: 16px;
 }
 .social-icons a {
-  width: 40px;
-  height: 40px;
-  background: var(--slate-200);
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--slate-700);
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
+  transition: color 0.2s ease;
 }
 .social-icons a:hover {
-  background: var(--primary);
-  color: white;
+  color: var(--primary);
 }
 
 .footer-links h4,
