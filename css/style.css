@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@700;800&family=Tajawal:wght@700;800&display=swap');
+
 /* =========================================================================
    Base & Variables
    ========================================================================= */
@@ -580,7 +582,14 @@ p { color: var(--slate-600); font-size: 1rem; line-height: 1.625; margin-bottom:
     display: flex;
     flex-direction: column;
 }
-.team-info h3 { font-size: 1.05rem; margin-bottom: 2px; font-weight: 700; color: var(--slate-900); }
+.team-info h3 { 
+    font-size: 1.15rem; 
+    margin-bottom: 2px; 
+    font-weight: 800; 
+    color: var(--slate-900); 
+    font-family: 'Cairo', sans-serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1), 0 1px 1px rgba(0,0,0,0.05);
+}
 .team-info p { margin: 0; font-size: 0.8rem; color: var(--slate-500); font-weight: 500; }
 
 /* Table */
@@ -820,13 +829,15 @@ p { color: var(--slate-600); font-size: 1rem; line-height: 1.625; margin-bottom:
     margin-bottom: 24px;
 }
 .match-names-row .team-name {
-    font-size: 0.95rem;
-    font-weight: 700;
+    font-size: 1.05rem;
+    font-weight: 800;
     color: var(--slate-800);
     text-align: center;
     width: 45%;
     line-height: 1.4;
     transition: color 0.4s ease;
+    font-family: 'Cairo', sans-serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1), 0 1px 1px rgba(0,0,0,0.05);
 }
 
 .match-card-divider {
@@ -967,9 +978,11 @@ p { color: var(--slate-600); font-size: 1rem; line-height: 1.625; margin-bottom:
     justify-content: flex-start;
 }
 .am-team-name {
-    font-weight: 700;
+    font-weight: 800;
     color: var(--slate-800);
-    font-size: 1rem;
+    font-size: 1.1rem;
+    font-family: 'Cairo', sans-serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1), 0 1px 1px rgba(0,0,0,0.05);
 }
 .am-center {
     display: flex;
