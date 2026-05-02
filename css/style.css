@@ -786,11 +786,19 @@ p { color: var(--slate-600); font-size: 1rem; line-height: 1.625; margin-bottom:
     flex-direction: row-reverse;
 }
 .match-team {
-    width: 64px;
-    height: 64px;
+    width: 72px;
+    height: 72px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.match-card .team-logo-placeholder {
+    width: 64px;
+    height: 64px;
+    margin: 4px;
+}
+.match-card .team-logo-placeholder span {
+    font-size: 32px !important;
 }
 .match-team-logo {
     max-width: 100%;
