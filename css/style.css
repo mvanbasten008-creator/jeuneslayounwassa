@@ -1754,6 +1754,13 @@ tr:hover {
   flex-direction: column;
   align-items: center;
   gap: 12px;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+a.contact-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-color: var(--primary);
 }
 
 .contact-box i {
