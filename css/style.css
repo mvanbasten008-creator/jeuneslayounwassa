@@ -540,7 +540,7 @@ p {
    Footer
    ========================================================================= */
 .site-footer {
-  background-color: #6fffe9;
+  background-color: #daffef;
   color: var(--slate-800);
   padding: 64px 48px 24px 48px;
 }
@@ -1760,6 +1760,33 @@ a.contact-box:hover {
   color: var(--primary);
   width: 28px;
   height: 28px;
+}
+
+.social-badge {
+  width: 64px;
+  height: 64px;
+  background: var(--soft-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+}
+
+.social-badge:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  background: var(--primary);
+  color: white;
+}
+
+.social-badge i {
+  width: 32px;
+  height: 32px;
+  stroke-width: 1.5;
 }
 
 .contact-box p {
