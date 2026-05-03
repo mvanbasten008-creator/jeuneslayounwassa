@@ -670,60 +670,6 @@ p {
 }
 
 /* League Info Container (New) */
-.league-info-card {
-  max-width: 800px;
-  margin: 0 auto;
-  background: var(--bg);
-  border-radius: 16px;
-  padding: 40px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
-  border: 1px solid var(--slate-100);
-  text-align: center;
-}
-
-.league-info-title {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--slate-900);
-  margin-bottom: 24px;
-  position: relative;
-  display: block;
-  padding-bottom: 16px;
-}
-
-.league-info-title .title-primary {
-  color: #000000;
-  font-weight: 900;
-}
-
-.league-info-title .title-accent {
-  color: #00ffe7;
-  font-weight: 900;
-  font-size: 1.25em;
-}
-
-.league-info-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: rgba(0, 255, 231, 0.4);
-  border-radius: 2px;
-}
-
-.league-info-desc {
-  font-size: 1.125rem;
-  line-height: 1.8;
-  color: var(--slate-600);
-  margin-bottom: 40px;
-}
-
-.league-info-desc strong {
-  color: #000000;
-  font-weight: 900;
-}
 
 .league-info-buttons {
   display: flex;
@@ -761,9 +707,6 @@ p {
   .league-info-buttons {
     flex-direction: column;
     align-items: stretch;
-  }
-  .league-info-card {
-    padding: 30px 20px;
   }
 }
 
