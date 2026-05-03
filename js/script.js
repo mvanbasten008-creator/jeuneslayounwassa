@@ -163,15 +163,16 @@ document.addEventListener("DOMContentLoaded", () => {
           matchesCarousel.querySelectorAll(".match-card"),
         );
         // Find nearest card with this index
-        const containerCenter =
-          matchesCarousel.scrollLeft + matchesCarousel.offsetWidth / 2;
+        const carouselRect = matchesCarousel.getBoundingClientRect();
+        const containerCenter = carouselRect.left + carouselRect.width / 2;
 
         let targetCard = null;
         let minDistance = Infinity;
 
         currentCards.forEach((card) => {
           if (parseInt(card.dataset.index) === index) {
-            const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+            const rect = card.getBoundingClientRect();
+            const cardCenter = rect.left + rect.width / 2;
             const dist = Math.abs(cardCenter - containerCenter);
             if (dist < minDistance) {
               minDistance = dist;
@@ -181,9 +182,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         if (targetCard) {
-          const cardCenter = targetCard.offsetLeft + targetCard.offsetWidth / 2;
-          const targetScroll = cardCenter - matchesCarousel.offsetWidth / 2;
-          matchesCarousel.scrollTo({ left: targetScroll, behavior: "smooth" });
+          const carouselRect = matchesCarousel.getBoundingClientRect();
+          const containerCenter = carouselRect.left + carouselRect.width / 2;
+          const rect = targetCard.getBoundingClientRect();
+          const cardCenter = rect.left + rect.width / 2;
+          const delta = cardCenter - containerCenter;
+
+          matchesCarousel.scrollBy({ left: delta, behavior: "smooth" });
         }
       });
     });
@@ -227,16 +232,30 @@ document.addEventListener("DOMContentLoaded", () => {
     // Middle block start index
     const middleStartIndex = numOriginals * 2;
 
+    // Helper to scroll purely horizontally within the carousel container
+    function scrollToCard(card, behavior = "smooth") {
+      const carouselRect = matchesCarousel.getBoundingClientRect();
+      const containerCenter = carouselRect.left + carouselRect.width / 2;
+      const rect = card.getBoundingClientRect();
+      const cardCenter = rect.left + rect.width / 2;
+      const delta = cardCenter - containerCenter;
+
+      if (behavior === "auto") {
+        matchesCarousel.style.scrollBehavior = "auto";
+        matchesCarousel.scrollBy({ left: delta, behavior: "auto" });
+        // Restore smooth scrolling from CSS
+        matchesCarousel.style.scrollBehavior = "smooth";
+      } else {
+        matchesCarousel.scrollBy({ left: delta, behavior: "smooth" });
+      }
+    }
+
     // 2. Set initial scroll position to the original elements (middle)
     function centerToMiddle() {
-      matchesCarousel.style.scrollBehavior = "auto"; // Disable smooth scroll
       const centerCard = allCards[middleStartIndex];
-      centerCard.scrollIntoView({
-        behavior: "auto",
-        inline: "center",
-        block: "nearest",
-      });
-      matchesCarousel.style.scrollBehavior = "smooth";
+      if (centerCard) {
+        scrollToCard(centerCard, "auto");
+      }
     }
 
     // Wait for fonts/layout then center
@@ -248,11 +267,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const activeIndex = allCards.indexOf(activeCard);
         const targetIndex = activeIndex + direction;
         if (targetIndex >= 0 && targetIndex < allCards.length) {
-          allCards[targetIndex].scrollIntoView({
-            behavior: "smooth",
-            inline: "center",
-            block: "nearest",
-          });
+          scrollToCard(allCards[targetIndex], "smooth");
         }
       }
     }
@@ -263,11 +278,7 @@ document.addEventListener("DOMContentLoaded", () => {
     matchesCarousel.addEventListener("click", (e) => {
       const card = e.target.closest(".match-card");
       if (card && !card.classList.contains("active")) {
-        card.scrollIntoView({
-          behavior: "smooth",
-          inline: "center",
-          block: "nearest",
-        });
+        scrollToCard(card, "smooth");
       }
     });
 
@@ -321,14 +332,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const equivalentIndex = closestIndex + numOriginals * 2;
           const targetCard = allCards[equivalentIndex];
 
-          matchesCarousel.style.scrollBehavior = "auto"; // instantly jump
-          targetCard.scrollIntoView({
-            behavior: "auto",
-            inline: "center",
-            block: "nearest",
-          });
-
-          matchesCarousel.style.scrollBehavior = "smooth";
+          scrollToCard(targetCard, "auto");
           setTimeout(() => (isHandlingJump = false), 50);
         } else if (closestIndex >= totalCards - numOriginals - 1) {
           isHandlingJump = true;
@@ -336,14 +340,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const equivalentIndex = closestIndex - numOriginals * 2;
           const targetCard = allCards[equivalentIndex];
 
-          matchesCarousel.style.scrollBehavior = "auto"; // instantly jump
-          targetCard.scrollIntoView({
-            behavior: "auto",
-            inline: "center",
-            block: "nearest",
-          });
-
-          matchesCarousel.style.scrollBehavior = "smooth";
+          scrollToCard(targetCard, "auto");
           setTimeout(() => (isHandlingJump = false), 50);
         }
       }
