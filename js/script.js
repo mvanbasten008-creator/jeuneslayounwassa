@@ -79,6 +79,36 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // 3.8. Teams Modal Logic
+  const openTeamsBtn = document.getElementById("openTeamsBtn");
+  const teamsModal = document.getElementById("teamsModal");
+  const closeTeamsBtn = document.getElementById("closeTeamsBtn");
+  const teamsModalContentContainer = document.getElementById("teamsModalContentContainer");
+  const originalTeamsGrid = document.querySelector(".teams-grid");
+
+  if (openTeamsBtn && teamsModal && closeTeamsBtn) {
+    const teamsOverlay = teamsModal.querySelector(".rules-modal-overlay");
+
+    const openTeams = () => {
+      if (teamsModalContentContainer && originalTeamsGrid && teamsModalContentContainer.innerHTML.trim() === "") {
+        teamsModalContentContainer.appendChild(originalTeamsGrid.cloneNode(true));
+      }
+      teamsModal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    };
+
+    const closeTeams = () => {
+      teamsModal.classList.remove("active");
+      document.body.style.overflow = "";
+    };
+
+    openTeamsBtn.addEventListener("click", openTeams);
+    closeTeamsBtn.addEventListener("click", closeTeams);
+    if (teamsOverlay) {
+      teamsOverlay.addEventListener("click", closeTeams);
+    }
+  }
+
   // 4. Gallery Logic
   const galleryScroll = document.getElementById("galleryScroll");
   const btnPrev = document.getElementById("galleryBtnPrev");

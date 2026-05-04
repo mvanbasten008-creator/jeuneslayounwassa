@@ -30,10 +30,18 @@
     <main class="content-wrapper max-width">
         <section class="league-hero hero-bg" style="min-height: 300px;">
             <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1>دوري الصداقة EDITION 6</h1>
-                <p class="hero-desc">نسخة جديدة تجمع أفضل الفرق في أجواء تنافسية منظمة</p>
-                <p class="hero-slogan">التحدي يبدأ هنا… والروح الرياضية تجمعنا</p>
+        </section>
+
+        <!-- Main Title -->
+        <section class="section max-width" style="padding-top: 48px; padding-bottom: 8px; text-align: center;">
+            <h1 style="font-size: 2.5rem; font-weight: 800; margin: 0; line-height: 1.2;"><span style="color: var(--primary-dark); -webkit-text-stroke: 0px;">دوري الصداقة</span> <span style="color: #FFFFFF; -webkit-text-stroke: 1.5px #0B3D3B;">EDITION 6</span></h1>
+        </section>
+
+        <!-- Intro Section (Moved from hero) -->
+        <section class="section max-width" style="padding-top: 40px; padding-bottom: 0px; text-align: center;">
+            <div style="background-color: var(--soft-green); border: 1px solid rgba(38, 212, 148, 0.3); border-radius: 16px; padding: 32px 24px; max-width: 800px; margin: 0 auto; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);">
+                <p style="font-size: 1.15rem; font-weight: 600; color: var(--primary-dark); margin-bottom: 12px; line-height: 1.6;">نسخة جديدة تجمع أفضل الفرق في أجواء تنافسية منظمة</p>
+                <p style="font-size: 0.95rem; color: var(--slate-600); font-weight: 500;">التحدي يبدأ هنا… والروح الرياضية تجمعنا</p>
             </div>
         </section>
 
@@ -171,6 +179,9 @@
                                 <div><i data-lucide="clock"></i> 14:00</div>
                                 <div><i data-lucide="calendar"></i> 10 ماي</div>
                             </div>
+                            <div style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 6px; font-size: 0.875rem; color: var(--slate-500); font-weight: 600; margin-top: 10px; margin-bottom: -16px;">
+                                <i data-lucide="map-pin" style="width: 16px; height: 16px;"></i> ملعب العيون وسي
+                            </div>
                         </div>
                     </div>
                     <div class="match-card">
@@ -193,6 +204,9 @@
                             <div class="match-bottom-row">
                                 <div><i data-lucide="clock"></i> 15:00</div>
                                 <div><i data-lucide="calendar"></i> 10 ماي</div>
+                            </div>
+                            <div style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 6px; font-size: 0.875rem; color: var(--slate-500); font-weight: 600; margin-top: 10px; margin-bottom: -16px;">
+                                <i data-lucide="map-pin" style="width: 16px; height: 16px;"></i> ملعب العيون وسي
                             </div>
                         </div>
                     </div>
@@ -217,6 +231,9 @@
                                 <div><i data-lucide="clock"></i> 16:00</div>
                                 <div><i data-lucide="calendar"></i> 10 ماي</div>
                             </div>
+                            <div style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 6px; font-size: 0.875rem; color: var(--slate-500); font-weight: 600; margin-top: 10px; margin-bottom: -16px;">
+                                <i data-lucide="map-pin" style="width: 16px; height: 16px;"></i> ملعب العيون وسي
+                            </div>
                         </div>
                     </div>
                     <div class="match-card">
@@ -239,6 +256,9 @@
                             <div class="match-bottom-row">
                                 <div><i data-lucide="clock"></i> 17:00</div>
                                 <div><i data-lucide="calendar"></i> 10 ماي</div>
+                            </div>
+                            <div style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 6px; font-size: 0.875rem; color: var(--slate-500); font-weight: 600; margin-top: 10px; margin-bottom: -16px;">
+                                <i data-lucide="map-pin" style="width: 16px; height: 16px;"></i> ملعب العيون وسي
                             </div>
                         </div>
                     </div>
@@ -472,7 +492,10 @@
             <div class="sporty-updates-list">
                 <div class="update-item">
                     <div class="update-number">1</div>
-                    <div class="update-content">تسجيل الفرق المشاركة</div>
+                    <div class="update-content clickable-update" id="openTeamsBtn">
+                        <span class="update-title-inline">الفرق المشاركة</span>
+                        <span class="click-hint"><i data-lucide="external-link"></i></span>
+                    </div>
                 </div>
                 <div class="update-item">
                     <div class="update-number">2</div>
@@ -530,27 +553,44 @@
             <div class="rules-modal-body">
                 <div class="modal-cadre glow-green">
                     <ol class="rules-list">
-                        <li>احترام جميع الفرق المشاركة</li>
-                        <li>الالتزام بالمواعيد المحددة للمباريات</li>
-                        <li>الحضور قبل المباراة بـ 30 دقيقة</li>
-                        <li>ارتداء الزي الرياضي الموحد لكل فريق</li>
-                        <li>يمنع التدخل العنيف داخل الملعب</li>
-                        <li>احترام قرارات الحكم</li>
-                        <li>يمنع الاحتجاج غير الرياضي</li>
-                        <li>اللعب بروح رياضية عالية</li>
-                        <li>يمنع أي سلوك غير أخلاقي</li>
-                        <li>احترام الطاقم التنظيمي</li>
-                        <li>الحفاظ على نظافة الملعب</li>
-                        <li>يمنع استخدام الكلمات النابية</li>
-                        <li>التبديلات تكون حسب قوانين البطولة</li>
-                        <li>الالتزام بعدد اللاعبين المحدد</li>
-                        <li>أي تأخير أكثر من 10 دقائق يعتبر انسحاب</li>
-                        <li>يمنع التدخل من الجمهور في القرارات</li>
-                        <li>احترام الفريق الخصم</li>
-                        <li>اللعب بدون عنف جسدي</li>
-                        <li>أي مخالفة قد تؤدي إلى الطرد من البطولة</li>
-                        <li>قرارات اللجنة المنظمة نهائية وغير قابلة للنقاش</li>
+                        <li>يجب على كل فريق تسجيل قائمة لاعبيه قبل انطلاق الدوري.</li>
+                        <li>يتكون كل فريق من 11 لاعباً أساسياً و5 احتياطيين.</li>
+                        <li>مدة كل مباراة 60 دقيقة (شوطان من 30 دقيقة).</li>
+                        <li>في حالة التعادل في الأدوار الإقصائية يُلجأ إلى ركلات الترجيح.</li>
+                        <li>البطاقة الصفراء تعني إنذاراً، والحمراء تعني الطرد الفوري.</li>
+                        <li>اللاعب الذي يتلقى بطاقتين صفراويتين في مباراتين مختلفتين يُوقف مباراة واحدة.</li>
+                        <li>يُمنع منعاً باتاً استخدام ألفاظ نابية أو التصرف بعدوانية.</li>
+                        <li>يجب على الفرق الحضور قبل 15 دقيقة من موعد المباراة.</li>
+                        <li>الفريق الذي يتأخر أكثر من 15 دقيقة يخسر المباراة بالتنازل.</li>
+                        <li>يُحتسب الفوز بـ 3 نقاط، والتعادل بنقطة واحدة، والخسارة بصفر.</li>
+                        <li>يُمنع اللعب بأحذية ذات مسامير حادة قد تسبب إصابات.</li>
+                        <li>يجب على كل فريق ارتداء قميص موحد بأرقام واضحة.</li>
+                        <li>الحكم صاحب القرار النهائي في الملعب ولا يُعترض على قراراته.</li>
+                        <li>يُمنع دخول الجمهور إلى أرض الملعب خلال المباريات.</li>
+                        <li>يجب احترام الخصم والحكام وجميع المشاركين في الدوري.</li>
+                        <li>أي فريق ينسحب من الدوري يُحرم من المشاركة في النسخ القادمة.</li>
+                        <li>يُحق للجنة التنظيمية تعديل جدول المباريات عند الضرورة.</li>
+                        <li>يُمنع تسجيل لاعب في أكثر من فريق واحد في نفس الدوري.</li>
+                        <li>الجوائز تُسلَّم في حفل رسمي في نهاية البطولة.</li>
+                        <li>اللجنة التنظيمية هي المرجع الأعلى في تفسير هذه القوانين والبت في النزاعات.</li>
                     </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Teams Modal -->
+    <div id="teamsModal" class="rules-modal">
+        <div class="rules-modal-overlay"></div>
+        <div class="rules-modal-content" dir="rtl">
+            <div class="rules-modal-header">
+                <h3>الفرق المشاركة</h3>
+                <button id="closeTeamsBtn" class="close-btn" aria-label="Close modal">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="rules-modal-body">
+                <div class="modal-cadre glow-green" id="teamsModalContentContainer">
                 </div>
             </div>
         </div>
